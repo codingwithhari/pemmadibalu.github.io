@@ -23,12 +23,17 @@ export default function Hero() {
 
       {/* Main Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        {/* Profile Image */}
+        {/* Profile Image with Neon Effect */}
         <div className="mb-8 animate-fade-in-up">
-          <div className="relative mx-auto w-48 h-48 rounded-full overflow-hidden border-4 border-primary/30 shadow-glow-primary hover-glow-primary">
-            <div className="w-full h-full bg-gradient-primary flex items-center justify-center">
-              <span className="text-6xl font-bold text-white">PB</span>
+          <div className="relative mx-auto w-48 h-48 rounded-full overflow-hidden neon-border shadow-glow-primary hover-glow-primary">
+            <div className="w-full h-full bg-gradient-rainbow flex items-center justify-center animate-hologram">
+              <span className="text-6xl font-bold text-white neon-text">PB</span>
             </div>
+            {/* Rotating Ring Effect */}
+            <div className="absolute inset-0 rounded-full border-2 border-transparent bg-gradient-primary animate-spin" style={{ 
+              background: 'conic-gradient(from 0deg, transparent, hsl(var(--primary)), transparent)',
+              animation: 'spin 3s linear infinite'
+            }}></div>
           </div>
         </div>
 
@@ -55,13 +60,13 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Action Buttons */}
+        {/* Action Buttons with Enhanced Effects */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up animate-delay-400">
-          <Button size="lg" className="bg-gradient-primary hover:shadow-glow-primary transition-all duration-300 transform hover:scale-105">
+          <Button size="lg" className="bg-gradient-rainbow hover:shadow-glow-intense transition-all duration-500 transform hover:scale-110 animate-neon-pulse">
             <Mail className="mr-2 h-5 w-5" />
             Get In Touch
           </Button>
-          <Button variant="outline" size="lg" className="glass-card hover-glow-accent">
+          <Button variant="outline" size="lg" className="glass-card hover-glow-accent neon-border">
             View My Work
           </Button>
         </div>
@@ -88,16 +93,19 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 float-animation">
-        <div className="w-20 h-20 rounded-full bg-gradient-primary opacity-20 blur-xl"></div>
-      </div>
-      <div className="absolute bottom-32 right-16 float-animation-delayed">
-        <div className="w-32 h-32 rounded-full bg-gradient-accent opacity-15 blur-2xl"></div>
-      </div>
-      <div className="absolute top-1/2 left-8 float-animation">
-        <div className="w-16 h-16 rounded-full bg-gradient-card opacity-25 blur-lg"></div>
-      </div>
+        {/* Floating Neon Orbs with Dynamic Colors */}
+        <div className="absolute top-20 left-10 float-animation">
+          <div className="w-20 h-20 rounded-full bg-gradient-primary opacity-40 blur-xl animate-pulse"></div>
+        </div>
+        <div className="absolute bottom-32 right-16 float-animation-delayed">
+          <div className="w-32 h-32 rounded-full bg-gradient-secondary opacity-30 blur-2xl animate-pulse animate-delay-300"></div>
+        </div>
+        <div className="absolute top-1/2 left-8 float-animation">
+          <div className="w-16 h-16 rounded-full bg-gradient-accent opacity-50 blur-lg animate-pulse animate-delay-500"></div>
+        </div>
+        <div className="absolute top-1/3 right-20 float-animation-delayed">
+          <div className="w-24 h-24 rounded-full bg-neon-purple opacity-35 blur-xl animate-pulse animate-delay-700"></div>
+        </div>
     </section>
   );
 }

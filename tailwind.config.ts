@@ -55,6 +55,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))',
 					hover: 'hsl(var(--card-hover))'
+				},
+				neon: {
+					purple: 'hsl(var(--neon-purple))',
+					green: 'hsl(var(--neon-green))',
+					orange: 'hsl(var(--neon-orange))'
 				}
 			},
 			borderRadius: {
@@ -110,7 +115,9 @@ export default {
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-secondary': 'var(--gradient-secondary)',
 				'gradient-accent': 'var(--gradient-accent)',
+				'gradient-rainbow': 'var(--gradient-rainbow)',
 				'gradient-background': 'var(--gradient-background)',
 				'gradient-card': 'var(--gradient-card)'
 			},
@@ -121,7 +128,8 @@ export default {
 				'card': 'var(--shadow-card)',
 				'glow-primary': 'var(--glow-primary)',
 				'glow-secondary': 'var(--glow-secondary)',
-				'glow-accent': 'var(--glow-accent)'
+				'glow-accent': 'var(--glow-accent)',
+				'glow-intense': 'var(--glow-intense)'
 			}
 		}
 	},

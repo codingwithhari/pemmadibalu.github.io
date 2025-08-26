@@ -56,10 +56,10 @@ export default function Navigation() {
       }`}>
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            {/* Logo */}
+            {/* Logo with Neon Effect */}
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center">
-                <span className="text-white font-bold text-lg">PB</span>
+              <div className="w-10 h-10 rounded-lg bg-gradient-rainbow flex items-center justify-center neon-border animate-neon-pulse">
+                <span className="text-white font-bold text-lg neon-text">PB</span>
               </div>
               <span className="font-bold text-xl gradient-text">Portfolio</span>
             </div>
