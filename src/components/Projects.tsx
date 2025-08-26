@@ -180,7 +180,7 @@ export default function Projects() {
         </div>
 
         {/* Certifications Section */}
-        <Card className="glass-card hover-glow-accent mb-16">
+        <Card id="certifications" className="glass-card hover-glow-accent mb-16">
           <CardHeader>
             <CardTitle className="text-center">
               <span className="gradient-text text-2xl">Certifications & Training</span>
