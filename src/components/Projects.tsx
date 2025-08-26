@@ -187,24 +187,73 @@ export default function Projects() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex flex-wrap gap-3 justify-center">
+            <div className="grid md:grid-cols-2 gap-6">
               {[
-                "Google AI-ML Virtual Internship",
-                "AWS Cloud Computing",
-                "Infosys Machine Learning with Go",
-                "Salesforce Developer Virtual Internship",
-                "UiPath RPA Developer Internship",
-                "Oneroadmap AI & Data Science",
-                "Edyst Python Programming"
+                {
+                  name: "Google AI-ML Virtual Internship",
+                  organization: "Google & EduSkills",
+                  duration: "120 Hours",
+                  description: "Short-term internship focused on Artificial Intelligence and Machine Learning concepts, organized by EduSkills in collaboration with Andhra Pradesh State Council of Higher Education."
+                },
+                {
+                  name: "AWS Cloud Computing",
+                  organization: "AWS Academy & EduSkills",
+                  duration: "10 Weeks",
+                  description: "Cloud Virtual Internship covering AWS services, cloud architecture, and deployment strategies. Completed through Kakinada Institute of Engineering and Technology."
+                },
+                {
+                  name: "Infosys Machine Learning with Go",
+                  organization: "Infosys Springboard",
+                  duration: "Course Completion",
+                  description: "Comprehensive course on Machine Learning implementation using Go programming language, covering algorithms and practical applications."
+                },
+                {
+                  name: "Salesforce Developer Virtual Internship",
+                  organization: "SmartBridge & Salesforce",
+                  duration: "8 Weeks",
+                  description: "Virtual internship program covering Salesforce development, including Apex programming, Lightning components, and CRM customization."
+                },
+                {
+                  name: "UiPath RPA Developer Internship",
+                  organization: "UiPath & EduSkills",
+                  duration: "10 Weeks (8 Weeks Active)",
+                  description: "RPA Developer Virtual Internship focusing on automation workflows, bot development, and process automation using UiPath platform."
+                },
+                {
+                  name: "Oneroadmap AI & Data Science",
+                  organization: "OneRoadmap",
+                  duration: "Certification Test",
+                  description: "AI and Data Scientist Certification demonstrating proficiency in artificial intelligence concepts, data analysis, and machine learning techniques."
+                },
+                {
+                  name: "Edyst Python Programming",
+                  organization: "Edyst",
+                  duration: "Course Completion",
+                  description: "Python Programming: Intro & Advanced certification covering fundamental to advanced Python concepts, data structures, and programming methodologies."
+                }
               ].map((cert, index) => (
-                <Badge 
-                  key={cert}
-                  variant="secondary" 
-                  className="px-4 py-2 text-sm hover:shadow-glow-primary transition-all duration-300 animate-scale-in cursor-pointer"
+                <Card 
+                  key={cert.name}
+                  className="glass-card hover-glow-secondary p-6 animate-fade-in-up"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  {cert}
-                </Badge>
+                  <div className="space-y-3">
+                    <div>
+                      <h4 className="text-lg font-semibold gradient-text-accent mb-1">
+                        {cert.name}
+                      </h4>
+                      <div className="flex items-center justify-between text-sm text-muted-foreground mb-2">
+                        <span>{cert.organization}</span>
+                        <Badge variant="outline" className="text-xs">
+                          {cert.duration}
+                        </Badge>
+                      </div>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {cert.description}
+                    </p>
+                  </div>
+                </Card>
               ))}
             </div>
           </CardContent>
