@@ -50,15 +50,6 @@ const skillCategories = [
   }
 ];
 
-const certifications = [
-  "Google AI-ML Virtual Internship",
-  "AWS Cloud Computing",
-  "Infosys Machine Learning with Go",
-  "Salesforce Developer Virtual Internship",
-  "UiPath RPA Developer Internship",
-  "Oneroadmap AI & Data Science",
-  "Edyst Python Programming"
-];
 
 export default function Skills() {
   return (
@@ -115,28 +106,6 @@ export default function Skills() {
           })}
         </div>
 
-        {/* Certifications Section */}
-        <Card className="glass-card hover-glow-accent">
-          <CardHeader>
-            <CardTitle className="text-center">
-              <span className="gradient-text text-2xl">Certifications & Training</span>
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="flex flex-wrap gap-3 justify-center">
-              {certifications.map((cert, index) => (
-                <Badge 
-                  key={cert}
-                  variant="secondary" 
-                  className="px-4 py-2 text-sm hover:shadow-glow-primary transition-all duration-300 animate-scale-in cursor-pointer"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  {cert}
-                </Badge>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
 
         {/* Floating Skill Icons */}
         <div className="absolute -z-10 opacity-10">
