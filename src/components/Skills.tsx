@@ -56,7 +56,8 @@ const certifications = [
   "Google AI-ML Virtual Internship",
   "Oneroadmap AI & Data Science",
   "Edyst Python Programming",
-  "AWS Cloud Computing"
+  "AWS Cloud Computing",
+  "Infosys Machine Learning with Go"
 ];
 
 export default function Skills() {
