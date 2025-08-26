@@ -16,12 +16,9 @@ export default function About() {
         </div>
 
         {/* Content Grid */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Profile Image */}
-          
-
+        <div className="grid gap-8 max-w-4xl mx-auto">
           {/* About Content */}
-          <div className="space-y-6">
+          <div className="space-y-8">
             <Card className="glass-card hover-glow-secondary p-8">
               <CardContent className="p-0">
                 <div className="flex items-center gap-3 mb-4">

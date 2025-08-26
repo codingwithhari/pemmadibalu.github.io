@@ -24,19 +24,14 @@ export default function Hero() {
 
       {/* Main Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        {/* Profile Image with Neon Effect */}
+        {/* Profile Image */}
         <div className="mb-8 animate-fade-in-up">
-          <div className="relative mx-auto w-48 h-48 rounded-full overflow-hidden neon-border shadow-glow-primary hover-glow-primary">
+          <div className="mx-auto w-48 h-48 rounded-full overflow-hidden">
             <img 
               src={profileImage} 
               alt="Pemmadi Balu - AI & Data Science Student" 
-              className="w-full h-full object-cover animate-hologram"
+              className="w-full h-full object-cover"
             />
-            {/* Rotating Ring Effect */}
-            <div className="absolute inset-0 rounded-full border-2 border-transparent bg-gradient-primary animate-spin" style={{ 
-              background: 'conic-gradient(from 0deg, transparent, hsl(var(--primary)), transparent)',
-              animation: 'spin 3s linear infinite'
-            }}></div>
           </div>
         </div>
 
