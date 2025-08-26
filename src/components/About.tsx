@@ -1,10 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { GraduationCap, MapPin, Calendar } from "lucide-react";
-
 export default function About() {
-  return (
-    <section className="py-20 px-6">
+  return <section className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -20,18 +18,7 @@ export default function About() {
         {/* Content Grid */}
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Profile Image */}
-          <div className="relative">
-            <Card className="glass-card hover-glow-primary p-8">
-              <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-primary relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-8xl font-bold text-white opacity-90">PB</span>
-                </div>
-                {/* Decorative Elements */}
-                <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-accent rounded-full opacity-20 blur-xl"></div>
-                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-card rounded-full opacity-30 blur-lg"></div>
-              </div>
-            </Card>
-          </div>
+          
 
           {/* About Content */}
           <div className="space-y-6">
@@ -100,6 +87,5 @@ export default function About() {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }
