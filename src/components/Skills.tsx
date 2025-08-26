@@ -51,13 +51,13 @@ const skillCategories = [
 ];
 
 const certifications = [
-  "Salesforce Developer Virtual Internship",
-  "UiPath RPA Developer Internship", 
   "Google AI-ML Virtual Internship",
-  "Oneroadmap AI & Data Science",
-  "Edyst Python Programming",
   "AWS Cloud Computing",
-  "Infosys Machine Learning with Go"
+  "Infosys Machine Learning with Go",
+  "Salesforce Developer Virtual Internship",
+  "UiPath RPA Developer Internship",
+  "Oneroadmap AI & Data Science",
+  "Edyst Python Programming"
 ];
 
 export default function Skills() {

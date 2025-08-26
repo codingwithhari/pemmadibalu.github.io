@@ -73,7 +73,7 @@ export default function About() {
                 <div className="text-sm text-muted-foreground">Projects</div>
               </Card>
               <Card className="glass-card text-center p-4 hover-glow-secondary">
-                <div className="text-2xl font-bold gradient-text">5+</div>
+                <div className="text-2xl font-bold gradient-text">7+</div>
                 <div className="text-sm text-muted-foreground">Certifications</div>
               </Card>
               <Card className="glass-card text-center p-4 hover-glow-accent">
