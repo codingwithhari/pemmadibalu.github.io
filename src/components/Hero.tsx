@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Mail, Github, Linkedin } from "lucide-react";
+import profileImage from "@/assets/profile-image.png";
 
 export default function Hero() {
   return (
@@ -26,9 +27,11 @@ export default function Hero() {
         {/* Profile Image with Neon Effect */}
         <div className="mb-8 animate-fade-in-up">
           <div className="relative mx-auto w-48 h-48 rounded-full overflow-hidden neon-border shadow-glow-primary hover-glow-primary">
-            <div className="w-full h-full bg-gradient-rainbow flex items-center justify-center animate-hologram">
-              <span className="text-6xl font-bold text-white neon-text">PB</span>
-            </div>
+            <img 
+              src={profileImage} 
+              alt="Pemmadi Balu - AI & Data Science Student" 
+              className="w-full h-full object-cover animate-hologram"
+            />
             {/* Rotating Ring Effect */}
             <div className="absolute inset-0 rounded-full border-2 border-transparent bg-gradient-primary animate-spin" style={{ 
               background: 'conic-gradient(from 0deg, transparent, hsl(var(--primary)), transparent)',
@@ -73,14 +76,20 @@ export default function Hero() {
 
         {/* Social Links */}
         <div className="flex justify-center gap-6 mb-12 animate-fade-in-up animate-delay-500">
-          <Button size="icon" variant="ghost" className="hover-glow-primary rounded-full">
-            <Github className="h-6 w-6" />
+          <Button size="icon" variant="ghost" className="hover-glow-primary rounded-full" asChild>
+            <a href="https://github.com/PemmadiBalu" target="_blank" rel="noopener noreferrer">
+              <Github className="h-6 w-6" />
+            </a>
           </Button>
-          <Button size="icon" variant="ghost" className="hover-glow-secondary rounded-full">
-            <Linkedin className="h-6 w-6" />
+          <Button size="icon" variant="ghost" className="hover-glow-secondary rounded-full" asChild>
+            <a href="https://www.linkedin.com/in/balupemmadi" target="_blank" rel="noopener noreferrer">
+              <Linkedin className="h-6 w-6" />
+            </a>
           </Button>
-          <Button size="icon" variant="ghost" className="hover-glow-accent rounded-full">
-            <Mail className="h-6 w-6" />
+          <Button size="icon" variant="ghost" className="hover-glow-accent rounded-full" asChild>
+            <a href="mailto:balupemmadi44@gmail.com">
+              <Mail className="h-6 w-6" />
+            </a>
           </Button>
         </div>
 

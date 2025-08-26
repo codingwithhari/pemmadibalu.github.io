@@ -3,6 +3,19 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Eye, Brain, Calculator, MessageSquare } from "lucide-react";
 
+const getProjectLink = (title: string) => {
+  switch (title) {
+    case "COVID-19 Detection from Chest X-Ray":
+      return "https://github.com/PemmadiBalu/COVID_19_XRAY_DETECTION";
+    case "GUI Calculator - Python":
+      return "https://github.com/PemmadiBalu/python--calculator-";
+    case "AI-Powered Chatbot":
+      return "https://github.com/PemmadiBalu/simple-ai-chart_bot-";
+    default:
+      return "https://github.com/PemmadiBalu";
+  }
+};
+
 const projects = [
   {
     title: "COVID-19 Detection from Chest X-Ray",
@@ -89,13 +102,11 @@ export default function Projects() {
                       {/* Overlay on hover */}
                       <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <div className="flex gap-4">
-                          <Button size="sm" variant="secondary" className="bg-white/90 text-black hover:bg-white">
-                            <Eye className="h-4 w-4 mr-2" />
-                            View
-                          </Button>
-                          <Button size="sm" variant="secondary" className="bg-white/90 text-black hover:bg-white">
-                            <Github className="h-4 w-4 mr-2" />
-                            Code
+                          <Button size="sm" variant="secondary" className="bg-white/90 text-black hover:bg-white" asChild>
+                            <a href={getProjectLink(project.title)} target="_blank" rel="noopener noreferrer">
+                              <Github className="h-4 w-4 mr-2" />
+                              Code
+                            </a>
                           </Button>
                         </div>
                       </div>
@@ -154,13 +165,11 @@ export default function Projects() {
 
                     {/* Action Buttons */}
                     <div className="flex gap-4 pt-4">
-                      <Button className={`bg-gradient-${project.color} hover:shadow-glow-${project.color} transition-all duration-300`}>
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        View Project
-                      </Button>
-                      <Button variant="outline" className="glass-card">
-                        <Github className="h-4 w-4 mr-2" />
-                        Source Code
+                      <Button variant="outline" className="glass-card" asChild>
+                        <a href={getProjectLink(project.title)} target="_blank" rel="noopener noreferrer">
+                          <Github className="h-4 w-4 mr-2" />
+                          Source Code
+                        </a>
                       </Button>
                     </div>
                   </div>

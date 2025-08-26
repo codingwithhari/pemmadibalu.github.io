@@ -135,6 +135,21 @@ export default function Contact() {
                     </div>
 
                     <div className="flex items-center gap-3 p-3 rounded-lg bg-card/50 hover:bg-card transition-colors">
+                      <div className="p-2 rounded-lg bg-accent/20">
+                        <Phone className="h-5 w-5 text-accent" />
+                      </div>
+                      <div>
+                        <p className="font-medium">Phone</p>
+                        <a 
+                          href="tel:+919989913586"
+                          className="text-primary hover:text-primary-glow transition-colors"
+                        >
+                          +91 9989913586
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3 p-3 rounded-lg bg-card/50 hover:bg-card transition-colors">
                       <div className="p-2 rounded-lg bg-secondary/20">
                         <MapPin className="h-5 w-5 text-secondary" />
                       </div>
@@ -150,14 +165,20 @@ export default function Contact() {
                 <div>
                   <h4 className="font-semibold mb-3">Connect with me on social media:</h4>
                   <div className="flex gap-4">
-                    <Button size="icon" variant="outline" className="glass-card hover-glow-primary">
-                      <Linkedin className="h-5 w-5" />
+                    <Button size="icon" variant="outline" className="glass-card hover-glow-primary" asChild>
+                      <a href="https://www.linkedin.com/in/balupemmadi" target="_blank" rel="noopener noreferrer">
+                        <Linkedin className="h-5 w-5" />
+                      </a>
                     </Button>
-                    <Button size="icon" variant="outline" className="glass-card hover-glow-secondary">
-                      <Github className="h-5 w-5" />
+                    <Button size="icon" variant="outline" className="glass-card hover-glow-secondary" asChild>
+                      <a href="https://github.com/PemmadiBalu" target="_blank" rel="noopener noreferrer">
+                        <Github className="h-5 w-5" />
+                      </a>
                     </Button>
-                    <Button size="icon" variant="outline" className="glass-card hover-glow-accent">
-                      <Mail className="h-5 w-5" />
+                    <Button size="icon" variant="outline" className="glass-card hover-glow-accent" asChild>
+                      <a href="mailto:balupemmadi44@gmail.com">
+                        <Mail className="h-5 w-5" />
+                      </a>
                     </Button>
                   </div>
                 </div>
