@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Mail, Github, Linkedin } from "lucide-react";
-import profileImage from "@/assets/profile-image.png";
+
 
 export default function Hero() {
   return (
@@ -28,7 +28,7 @@ export default function Hero() {
         <div className="mb-8 animate-fade-in-up">
           <div className="mx-auto w-48 h-48 rounded-full overflow-hidden">
             <img 
-              src={profileImage} 
+              src="/lovable-uploads/2fe7f7ee-826c-4a2e-a1d9-559418985ba9.png" 
               alt="Pemmadi Balu - AI & Data Science Student" 
               className="w-full h-full object-cover"
             />
