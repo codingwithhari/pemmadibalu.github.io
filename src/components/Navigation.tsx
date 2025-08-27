@@ -83,9 +83,7 @@ export default function Navigation() {
           <div className="flex items-center justify-between">
             {/* Logo with Simple Effect */}
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center">
-                <span className="text-white font-bold text-lg">PB</span>
-              </div>
+              
               <span className="font-bold text-xl gradient-text">Portfolio</span>
             </div>
 
