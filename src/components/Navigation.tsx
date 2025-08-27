@@ -17,28 +17,44 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-      
-      // Update active section based on scroll position
-      const sections = navItems.map(item => item.id);
-      const current = sections.find(section => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
-        }
-        return false;
-      });
-      
-      if (current) {
-        setActiveSection(current);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          setScrolled(scrollY > 50);
+          
+          // Cache section elements to avoid repeated DOM queries
+          const sectionElements = navItems.reduce((acc, item) => {
+            const element = document.getElementById(item.id);
+            if (element) acc[item.id] = element;
+            return acc;
+          }, {} as Record<string, Element>);
+          
+          // Find active section more efficiently
+          const current = navItems.find(item => {
+            const element = sectionElements[item.id];
+            if (element) {
+              const rect = element.getBoundingClientRect();
+              return rect.top <= 100 && rect.bottom >= 100;
+            }
+            return false;
+          })?.id;
+          
+          if (current && current !== activeSection) {
+            setActiveSection(current);
+          }
+          
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [activeSection]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);

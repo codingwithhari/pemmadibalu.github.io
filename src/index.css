@@ -132,10 +132,11 @@
   /* Enhanced Glass Card Effect with Neon Border */
   .glass-card {
     background: var(--glass-bg);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(12px);
     border: 1px solid var(--glass-border);
     box-shadow: var(--shadow-card);
     position: relative;
+    will-change: background, backdrop-filter;
   }
 
   .glass-card::before {
@@ -168,50 +169,64 @@
   /* Animated Gradient Text with Pulsing */
   .gradient-text {
     background: var(--gradient-rainbow);
-    background-size: 300% 300%;
+    background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: gradient-shift 4s ease-in-out infinite, text-glow 2s ease-in-out infinite alternate;
+    animation: gradient-shift 6s ease-in-out infinite;
+    will-change: background-position;
   }
 
   .gradient-text-accent {
     background: var(--gradient-secondary);
-    background-size: 300% 300%;
+    background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: gradient-shift 3s ease-in-out infinite;
+    animation: gradient-shift 8s ease-in-out infinite;
+    will-change: background-position;
   }
 
   /* Pulsing Neon Border */
   .neon-border {
     border: 2px solid hsl(var(--primary));
     box-shadow: 
-      0 0 10px hsl(var(--primary) / 0.5),
-      inset 0 0 10px hsl(var(--primary) / 0.2);
-    animation: neon-pulse 2s ease-in-out infinite alternate;
+      0 0 8px hsl(var(--primary) / 0.4),
+      inset 0 0 8px hsl(var(--primary) / 0.15);
+    animation: neon-pulse 4s ease-in-out infinite alternate;
+    will-change: box-shadow;
   }
 
   /* Enhanced Hover Effects */
   .hover-glow-primary {
-    transition: var(--transition-bounce);
+    transition: var(--transition-smooth);
     position: relative;
+    will-change: transform, box-shadow;
   }
   
   .hover-glow-primary:hover {
-    box-shadow: var(--glow-intense);
-    transform: translateY(-4px) scale(1.02);
+    box-shadow: var(--glow-primary);
+    transform: translateY(-2px) scale(1.01);
+  }
+
+  .hover-glow-secondary {
+    transition: var(--transition-smooth);
+    will-change: transform, box-shadow;
   }
 
   .hover-glow-secondary:hover {
     box-shadow: var(--glow-secondary);
-    transform: translateY(-4px) scale(1.02);
+    transform: translateY(-2px) scale(1.01);
+  }
+
+  .hover-glow-accent {
+    transition: var(--transition-smooth);
+    will-change: transform, box-shadow;
   }
 
   .hover-glow-accent:hover {
     box-shadow: var(--glow-accent);
-    transform: translateY(-4px) scale(1.02);
+    transform: translateY(-2px) scale(1.01);
   }
 
   /* Cyberpunk Grid Background */
@@ -393,7 +408,8 @@
   }
 
   .animate-neon-pulse {
-    animation: neon-pulse 2s ease-in-out infinite alternate;
+    animation: neon-pulse 4s ease-in-out infinite alternate;
+    will-change: box-shadow;
   }
 
   .animate-hologram {
