@@ -102,11 +102,27 @@
     @apply bg-background text-foreground;
     background: var(--gradient-background);
     font-feature-settings: "rlig" 1, "calt" 1;
+    /* Optimize for mobile performance */
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-overflow-scrolling: touch;
+    text-rendering: optimizeSpeed;
   }
 
-  /* Smooth scrolling */
+  /* Smooth scrolling - optimized */
   html {
     scroll-behavior: smooth;
+  }
+  
+  /* Performance optimization for all interactive elements */
+  button, a, [role="button"] {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  
+  /* Reduce repaints */
+  * {
+    box-sizing: border-box;
   }
 
   /* Custom scrollbar */
@@ -129,14 +145,13 @@
 }
 
 @layer components {
-  /* Enhanced Glass Card Effect with Neon Border */
+  /* Enhanced Glass Card Effect - Optimized */
   .glass-card {
     background: var(--glass-bg);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(8px);
     border: 1px solid var(--glass-border);
     box-shadow: var(--shadow-card);
     position: relative;
-    will-change: background, backdrop-filter;
   }
 
   .glass-card::before {
@@ -166,25 +181,19 @@
       0 0 20px currentColor;
   }
 
-  /* Animated Gradient Text with Pulsing */
+  /* Simplified Gradient Text */
   .gradient-text {
-    background: var(--gradient-rainbow);
-    background-size: 200% 200%;
+    background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: gradient-shift 6s ease-in-out infinite;
-    will-change: background-position;
   }
 
   .gradient-text-accent {
     background: var(--gradient-secondary);
-    background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: gradient-shift 8s ease-in-out infinite;
-    will-change: background-position;
   }
 
   /* Pulsing Neon Border */
@@ -197,106 +206,32 @@
     will-change: box-shadow;
   }
 
-  /* Enhanced Hover Effects */
+  /* Simplified Hover Effects */
   .hover-glow-primary {
-    transition: var(--transition-smooth);
-    position: relative;
-    will-change: transform, box-shadow;
+    transition: transform 0.2s ease;
   }
   
   .hover-glow-primary:hover {
-    box-shadow: var(--glow-primary);
-    transform: translateY(-2px) scale(1.01);
+    transform: translateY(-1px);
   }
 
   .hover-glow-secondary {
-    transition: var(--transition-smooth);
-    will-change: transform, box-shadow;
+    transition: transform 0.2s ease;
   }
 
   .hover-glow-secondary:hover {
-    box-shadow: var(--glow-secondary);
-    transform: translateY(-2px) scale(1.01);
+    transform: translateY(-1px);
   }
 
   .hover-glow-accent {
-    transition: var(--transition-smooth);
-    will-change: transform, box-shadow;
+    transition: transform 0.2s ease;
   }
 
   .hover-glow-accent:hover {
-    box-shadow: var(--glow-accent);
-    transform: translateY(-2px) scale(1.01);
+    transform: translateY(-1px);
   }
 
-  /* Cyberpunk Grid Background */
-  .cyber-grid {
-    background-image: 
-      linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
-    background-size: 50px 50px;
-    animation: grid-move 20s linear infinite;
-  }
-
-  /* Holographic Effect */
-  .holographic {
-    background: linear-gradient(
-      45deg,
-      transparent 30%,
-      rgba(255, 255, 255, 0.1) 50%,
-      transparent 70%
-    );
-    animation: hologram 3s ease-in-out infinite;
-  }
-
-  /* Animated Underline */
-  .animated-underline {
-    position: relative;
-    transition: var(--transition-smooth);
-  }
-
-  .animated-underline::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background: var(--gradient-primary);
-    transition: var(--transition-smooth);
-  }
-
-  .animated-underline:hover::after {
-    width: 100%;
-  }
-
-  /* Floating Animation */
-  .float-animation {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  .float-animation-delayed {
-    animation: float 6s ease-in-out infinite 2s;
-  }
-
-  /* Particle Background */
-  .particles-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none;
-  }
-
-  .particle {
-    position: absolute;
-    background: var(--gradient-primary);
-    border-radius: 50%;
-    animation: particle-float 10s linear infinite;
-    opacity: 0.6;
-  }
+  /* Remove heavy animations */
 }
 
 @layer utilities {
@@ -430,9 +365,17 @@
 @layer base {
   * {
     @apply border-border;
+    box-sizing: border-box;
   }
 
   body {
     @apply bg-background text-foreground;
+    background: var(--gradient-background);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    /* Optimize for mobile performance */
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-overflow-scrolling: touch;
+    text-rendering: optimizeSpeed;
   }
 }

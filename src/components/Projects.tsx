@@ -89,7 +89,7 @@ export default function Projects() {
             return (
               <Card 
                 key={project.title}
-                className={`glass-card hover-glow-${project.color} animate-fade-in-up group`}
+                className={`glass-card hover-glow-${project.color} group`}
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <div className="grid md:grid-cols-2 gap-8 p-8">
@@ -136,8 +136,7 @@ export default function Projects() {
                         {project.features.slice(0, 4).map((feature, featureIndex) => (
                           <li 
                             key={featureIndex}
-                            className="flex items-start gap-2 text-sm text-muted-foreground animate-slide-in-right"
-                            style={{ animationDelay: `${(index * 0.2) + (featureIndex * 0.1)}s` }}
+                            className="flex items-start gap-2 text-sm text-muted-foreground"
                           >
                             <div className={`w-2 h-2 rounded-full bg-${project.color} mt-2 flex-shrink-0`}></div>
                             <span>{feature}</span>
@@ -154,8 +153,7 @@ export default function Projects() {
                           <Badge 
                             key={tech}
                             variant="secondary" 
-                            className="hover:shadow-primary/50 hover:shadow-md transition-all duration-300 animate-scale-in"
-                            style={{ animationDelay: `${(index * 0.2) + (techIndex * 0.05)}s` }}
+                            className="hover:shadow-primary/50 hover:shadow-md transition-all duration-300"
                           >
                             {tech}
                           </Badge>
@@ -234,7 +232,7 @@ export default function Projects() {
               ].map((cert, index) => (
                 <Card 
                   key={cert.name}
-                  className="glass-card hover-glow-secondary p-6 animate-fade-in-up"
+                  className="glass-card hover-glow-secondary p-6"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="space-y-3">

@@ -5,27 +5,12 @@ import { ChevronDown, Mail, Github, Linkedin } from "lucide-react";
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background Particles */}
-      <div className="particles-bg">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="particle"
-            style={{
-              left: `${Math.random() * 100}%`,
-              width: `${Math.random() * 6 + 2}px`,
-              height: `${Math.random() * 6 + 2}px`,
-              animationDelay: `${Math.random() * 10}s`,
-              animationDuration: `${Math.random() * 10 + 15}s`,
-            }}
-          />
-        ))}
-      </div>
-
+      {/* Simplified Background - No Particles */}
+      
       {/* Main Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         {/* Profile Image */}
-        <div className="mb-8 animate-fade-in-up">
+        <div className="mb-8">
           <div className="mx-auto w-48 h-48 rounded-full overflow-hidden">
             <img 
               src="/lovable-uploads/2fe7f7ee-826c-4a2e-a1d9-559418985ba9.png" 
@@ -36,18 +21,18 @@ export default function Hero() {
         </div>
 
         {/* Welcome Text */}
-        <div className="mb-4 animate-fade-in-up animate-delay-200">
+        <div className="mb-4">
           <p className="text-muted-foreground text-lg mb-2">Welcome to My Portfolio</p>
           <h1 className="text-5xl md:text-7xl font-bold mb-4">
             I'm{" "}
-            <span className="gradient-text animate-gradient-shift">
+            <span className="gradient-text">
               PEMMADI BALU
             </span>
           </h1>
         </div>
 
         {/* Description */}
-        <div className="mb-8 animate-fade-in-up animate-delay-300">
+        <div className="mb-8">
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             B.Tech Graduate in{" "}
             <span className="gradient-text-accent font-semibold">
@@ -58,30 +43,30 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Action Buttons with Enhanced Effects */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up animate-delay-400">
-          <Button size="lg" className="bg-gradient-rainbow hover:shadow-glow-intense transition-all duration-500 transform hover:scale-110 animate-neon-pulse">
+        {/* Action Buttons - Simplified */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <Button size="lg" className="bg-gradient-primary hover:opacity-90 transition-opacity">
             <Mail className="mr-2 h-5 w-5" />
             Get In Touch
           </Button>
-          <Button variant="outline" size="lg" className="glass-card hover-glow-accent neon-border">
+          <Button variant="outline" size="lg" className="glass-card hover:bg-muted/10">
             View My Work
           </Button>
         </div>
 
         {/* Social Links */}
-        <div className="flex justify-center gap-6 mb-12 animate-fade-in-up animate-delay-500">
-          <Button size="icon" variant="ghost" className="hover-glow-primary rounded-full" asChild>
+        <div className="flex justify-center gap-6 mb-12">
+          <Button size="icon" variant="ghost" className="hover:bg-muted/20 rounded-full" asChild>
             <a href="https://github.com/PemmadiBalu" target="_blank" rel="noopener noreferrer">
               <Github className="h-6 w-6" />
             </a>
           </Button>
-          <Button size="icon" variant="ghost" className="hover-glow-secondary rounded-full" asChild>
+          <Button size="icon" variant="ghost" className="hover:bg-muted/20 rounded-full" asChild>
             <a href="https://www.linkedin.com/in/balupemmadi" target="_blank" rel="noopener noreferrer">
               <Linkedin className="h-6 w-6" />
             </a>
           </Button>
-          <Button size="icon" variant="ghost" className="hover-glow-accent rounded-full" asChild>
+          <Button size="icon" variant="ghost" className="hover:bg-muted/20 rounded-full" asChild>
             <a href="mailto:balupemmadi44@gmail.com">
               <Mail className="h-6 w-6" />
             </a>
@@ -89,27 +74,13 @@ export default function Hero() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="animate-fade-in-up animate-delay-500">
+        <div>
           <div className="flex flex-col items-center">
             <p className="text-sm text-muted-foreground mb-2">Scroll to explore</p>
-            <ChevronDown className="h-6 w-6 text-primary animate-bounce" />
+            <ChevronDown className="h-6 w-6 text-primary" />
           </div>
         </div>
       </div>
-
-        {/* Floating Neon Orbs with Dynamic Colors */}
-        <div className="absolute top-20 left-10 float-animation">
-          <div className="w-20 h-20 rounded-full bg-gradient-primary opacity-40 blur-xl animate-pulse"></div>
-        </div>
-        <div className="absolute bottom-32 right-16 float-animation-delayed">
-          <div className="w-32 h-32 rounded-full bg-gradient-secondary opacity-30 blur-2xl animate-pulse animate-delay-300"></div>
-        </div>
-        <div className="absolute top-1/2 left-8 float-animation">
-          <div className="w-16 h-16 rounded-full bg-gradient-accent opacity-50 blur-lg animate-pulse animate-delay-500"></div>
-        </div>
-        <div className="absolute top-1/3 right-20 float-animation-delayed">
-          <div className="w-24 h-24 rounded-full bg-neon-purple opacity-35 blur-xl animate-pulse animate-delay-700"></div>
-        </div>
     </section>
   );
 }

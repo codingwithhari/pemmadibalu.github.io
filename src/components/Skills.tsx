@@ -73,7 +73,7 @@ export default function Skills() {
             return (
               <Card 
                 key={category.title} 
-                className={`glass-card hover-glow-${category.color} animate-fade-in-up`}
+                className={`glass-card hover-glow-${category.color}`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardHeader>
@@ -87,11 +87,7 @@ export default function Skills() {
                 <CardContent>
                   <div className="space-y-4">
                     {category.skills.map((skill, skillIndex) => (
-                      <div 
-                        key={skill.name}
-                        className="animate-slide-in-right"
-                        style={{ animationDelay: `${(index * 0.1) + (skillIndex * 0.05)}s` }}
-                      >
+                      <div key={skill.name}>
                         <div className="flex justify-between items-center mb-2">
                           <span className="font-medium">{skill.name}</span>
                           <span className="text-sm text-muted-foreground">{skill.level}%</span>
@@ -104,20 +100,6 @@ export default function Skills() {
               </Card>
             );
           })}
-        </div>
-
-
-        {/* Floating Skill Icons */}
-        <div className="absolute -z-10 opacity-10">
-          <div className="absolute top-20 left-20 float-animation">
-            <Code className="h-16 w-16 text-primary" />
-          </div>
-          <div className="absolute bottom-32 right-32 float-animation-delayed">
-            <Brain className="h-20 w-20 text-secondary" />
-          </div>
-          <div className="absolute top-1/2 right-20 float-animation">
-            <Database className="h-12 w-12 text-accent" />
-          </div>
         </div>
       </div>
     </section>
